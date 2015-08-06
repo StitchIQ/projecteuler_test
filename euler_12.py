@@ -1,6 +1,5 @@
 #! /usr/bin/env python
 #coding=utf-8
-<<<<<<< HEAD
 
 def find_factors(n):
     total = 2
@@ -10,28 +9,31 @@ def find_factors(n):
                 total += 2
         else:
             break
-
-    #for i in range(1, sqrt(n)):
-    #    if n % i == 0:
-    #        total.append(i)
-    #total.append(n)
-    #print total
-    #print len(total)
     return total
 
-#print find_factors(21)
+
+#如果所以小于sqrt(该数)的数中有n个因数，那么这个数的因数有2*n个。
+#如果该数恰是平方数，那么该数有因数2 *n+1个
+def find_div_num(n):
+    number = 0
+    divisor = 1
+    triangle = n*(n+1)/2
+    while(divisor*divisor < triangle):
+        if (triangle % divisor == 0):
+            number +=1
+        divisor +=1
+
+    if divisor*divisor == triangle:
+        return 2*number +1
+    else:
+        return 2*number
 
 def find_triangle():
-    temp = 0
-    for s in range(1,1000000):
-        temp += s
-        print temp
-        if find_factors(temp) >= 500:
-            print s
-            print temp
-            break
-
+    n = 1
+    while(find_div_num(n) <= 500):
+        n +=1
+    print n
+    print n*(n+1)/2
 find_triangle()
-#print 2**38
-=======
->>>>>>> dc364bf8c436fc90ed03b6ef7abbf8e554fa66d4
+
+

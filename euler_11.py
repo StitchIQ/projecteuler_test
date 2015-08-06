@@ -20,23 +20,23 @@ all = '''08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 04 42 16 73 38 25 39 11 24 94 72 18 08 46 29 32 40 62 76 36
 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
-01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48'''.split('\n')
+01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48'''
 
 dl =[]
-for s in all:
+ss = all.split('\n')
+for s in ss:
     dl.append(s.split())
 
 for i in range(0, 20):
     for j in range(0, 20):
         dl[i][j] = int(dl[i][j])
-print dl
 
 def find_row_max(dl):
     max_num_row = 0
     max_num_col = 0
     max_i = 0
     max_j = 0
-    for i in range(0,20):
+    for i in range(0,17):
         for j in range(0,17):
             temp = dl[i][j] * dl[i][j+1]* dl[i][j+2] * dl[i][j+3]
             #temp = dl[i][j] + dl[i][j+1] + dl[i][j+2] + dl[i][j+3]
@@ -53,11 +53,7 @@ def find_row_max(dl):
                     max_num_col = temp
                     max_i = i
                     max_j = j
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> dc364bf8c436fc90ed03b6ef7abbf8e554fa66d4
     print max_i
     print max_j
     print max_num_row
@@ -83,19 +79,36 @@ def find_diagonal(dl):
             temp.append(dl[i][i])
         print temp
         total2.append(temp)
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> dc364bf8c436fc90ed03b6ef7abbf8e554fa66d4
     #print total
     print total2
 
 
 find_diagonal(dl)
 
-<<<<<<< HEAD
-print dl[19][19]
-=======
-print dl[19][19]
->>>>>>> dc364bf8c436fc90ed03b6ef7abbf8e554fa66d4
+
+def multi_max(dl):
+    product = 0
+    temp1 = 0
+    temp2 = 0
+
+    for i in range(0,17):
+        for j in range(0,17):
+            temp1 = dl[i][j] * dl[i+1][j+1]* dl[i+2][j+2]* dl[i+3][j+3]
+            temp2 = dl[i][j+3] * dl[i+1][j+2]* dl[i+2][j+1]* dl[i+3][j]
+            if temp1 > product:
+                product = temp1
+            if temp2 > product:
+                product = temp2
+
+    for i in range(0,20):
+        for j in range(0,17):
+            temp1 = dl[i][j] * dl[i][j+1]* dl[i][j+2]* dl[i][j+3]
+            temp2 = dl[j][i] * dl[j+1][i]* dl[j+2][i]* dl[j+3][i]
+            if temp1 > product:
+                product = temp1
+            if temp2 > product:
+                product = temp2
+    print product
+
+multi_max(dl)
