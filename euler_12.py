@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 #coding=utf-8
+<<<<<<< HEAD
 
 def find_factors(n):
     total = 2
@@ -32,3 +33,5 @@ def find_triangle():
 
 find_triangle()
 #print 2**38
+=======
+>>>>>>> dc364bf8c436fc90ed03b6ef7abbf8e554fa66d4

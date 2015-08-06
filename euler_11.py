@@ -53,7 +53,11 @@ def find_row_max(dl):
                     max_num_col = temp
                     max_i = i
                     max_j = j
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> dc364bf8c436fc90ed03b6ef7abbf8e554fa66d4
     print max_i
     print max_j
     print max_num_row
@@ -79,11 +83,19 @@ def find_diagonal(dl):
             temp.append(dl[i][i])
         print temp
         total2.append(temp)
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> dc364bf8c436fc90ed03b6ef7abbf8e554fa66d4
     #print total
     print total2
 
 
 find_diagonal(dl)
 
+<<<<<<< HEAD
 print dl[19][19]
+=======
+print dl[19][19]
+>>>>>>> dc364bf8c436fc90ed03b6ef7abbf8e554fa66d4
