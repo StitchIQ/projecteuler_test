@@ -21,7 +21,7 @@ def str_int_list(n):
     [ll.append(int(i)) for i in s]
     return ll
 
-#str_int_list(409113)
+print str_int_list(409113)
 #409113
 #3265920
 print 145 == sum(map(jiecheng,str_int_list(145)))
